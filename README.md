@@ -1,0 +1,1 @@
+<p align="center"> <img src="captures/Exo1.JPG"> </p>
