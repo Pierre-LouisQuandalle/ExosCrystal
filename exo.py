@@ -24,7 +24,17 @@ def entryTime(s,keypad):
     print("Le temps total minimum pour écrire ce string est de " + str(totaltime))
 
 def max_diff(int_array):
-    return
+    maxdiff=0
+    min=100000000
+    for i in range (len(int_array)):
+        if maxdiff<int_array[i]:
+            for x in range(i): #jusqua la nouvelle valeur max potentielle trouvée
+                if min>int_array[x]:
+                    min=int_array[x]
+            maxdiff=int_array[i]-min        
+                    
+    return maxdiff
+
         
         
 
@@ -71,7 +81,9 @@ def calculateFromPosition(positioninitiale,positionarrivee): #fonction pour calc
         case _: return #default case
 
 if __name__ == '__main__':
-    s=input("Quelle valeur pour s ? Des chiffres de 1 à 9 seulement \n")
-    keypad=input("Quelle valeur pour keypad ? (longueur 9, chiffres de 1 à 9 avec une seule occurence) \n")
-    entryTime(s,keypad)
-
+    #s=input("Quelle valeur pour s ? Des chiffres de 1 à 9 seulement \n")
+    #keypad=input("Quelle valeur pour keypad ? (longueur 9, chiffres de 1 à 9 avec une seule occurence) \n")
+    #entryTime(s,keypad)
+    list_sample=[100, 10, 5, 10, 1, 8, 16, 21]
+    maxdiff=max_diff(list_sample)
+    print(maxdiff)
